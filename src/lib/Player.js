@@ -1,13 +1,15 @@
 const { EventEmitter } = require("events");
 
 /**
- * LavaLink Player
- * @extends {EventEmitter}
+ * Player
+ * @extends EventEmitter
  */
 class Player extends EventEmitter {
 
     /**
+     * Options to pass to Player
 	 * @typedef {Object} PlayerOptions
+     * @memberof Player
 	 * @property {string} id Client user id
 	 * @property {external:Client} client Client
      * @property {PlayerManager} manager The player's manager
@@ -19,7 +21,7 @@ class Player extends EventEmitter {
      * LavaLink Player Options
      * @param {PlayerOptions} options Player Options
      */
-    constructor(options = {}) {
+    constructor(options) {
         super();
         /**
          * Player id (Guild ID)
@@ -239,7 +241,7 @@ class Player extends EventEmitter {
                 /**
 		         * Emmited when the player encounters an error
 		         * @event LavaPlayer#error
-		         * @prop {object} message The raw message
+		         * @prop {Object} message The raw message
 		         */
                 if (this.listenerCount("error")) return this.emit("error", message);
                 return;

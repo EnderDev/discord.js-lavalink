@@ -26,7 +26,6 @@ Docma.create()
             { lavalink: "./src/*/**/*.js" }
         ],
         dest: "./docs",
-        debug: true,
         jsdoc: { plugins: ["jsdoc-dynamic"] },
         template: {
             options: {
@@ -47,7 +46,10 @@ Docma.create()
                         target: "_blank",
                         iconClass: "ico-md ico-github"
                     }
-                ]
+                ],
+                navbar: {
+                    dark: true
+                }
             }
         }
     })
